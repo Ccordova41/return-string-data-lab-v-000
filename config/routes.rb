@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :invoices
   resources :products, only: [:index, :new, :create]
 
-  get '/posts/:id/description', to: 'posts#description'
-  get '/posts/:id/inventory', to: 'posts#inventory'
+  get '/products/:id/description', to: 'posts#description'
+  get '/products/:id/inventory', to: 'posts#inventory'
 end
