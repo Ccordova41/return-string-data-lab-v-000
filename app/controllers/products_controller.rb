@@ -3,17 +3,21 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
-  def new 
-    @product = Product.new 
-  end 
+  def new
+    @product = Product.new
+  end
 
-  def create 
+  def create
     product = Product.new(product_params)
-  end 
+      if product.save
+        redirect_to products_path
+      else
+        render new 
+  end
 
-  private 
+  private
 
   def product_params
     params.require(:product).permit(:name, :description, :price, :inventory)
-  end  
+  end
 end
