@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
       else
         render :new
   end
+end
 
   def inventory
      product = Product.find(params[:id])
